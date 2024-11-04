@@ -1,0 +1,431 @@
+/* Enterprise-grade CSS Reset and Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "salt", "ss01", "ss03";
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* High-end Custom Properties with Design System Integration */
+:root {
+    /* Color System - Active Projects */
+    --active-50: #eff6ff;
+    --active-100: #dbeafe;
+    --active-200: #bfdbfe;
+    --active-300: #93c5fd;
+    --active-400: #60a5fa;
+    --active-500: #3b82f6;
+    --active-600: #2563eb;
+    --active-700: #1d4ed8;
+    --active-800: #1e40af;
+    --active-900: #1e3a8a;
+    --active-950: #172554;
+
+    /* Color System - Holding Tank */
+    --holding-50: #fff7ed;
+    --holding-100: #ffedd5;
+    --holding-200: #fed7aa;
+    --holding-300: #fdba74;
+    --holding-400: #fb923c;
+    --holding-500: #f97316;
+    --holding-600: #ea580c;
+    --holding-700: #c2410c;
+    --holding-800: #9a3412;
+    --holding-900: #7c2d12;
+    --holding-950: #431407;
+
+    /* Neutral System */
+    --neutral-50: #f8fafc;
+    --neutral-100: #f1f5f9;
+    --neutral-200: #e2e8f0;
+    --neutral-300: #cbd5e1;
+    --neutral-400: #94a3b8;
+    --neutral-500: #64748b;
+    --neutral-600: #475569;
+    --neutral-700: #334155;
+    --neutral-800: #1e293b;
+    --neutral-900: #0f172a;
+    --neutral-950: #020617;
+
+    /* Elevation System */
+    --elevation-1:
+        0px 1px 2px rgba(0, 0, 0, 0.04),
+        0px 3px 6px rgba(0, 0, 0, 0.06);
+    --elevation-2:
+        0px 2px 4px rgba(0, 0, 0, 0.05),
+        0px 5px 10px rgba(0, 0, 0, 0.08);
+    --elevation-3:
+        0px 4px 8px rgba(0, 0, 0, 0.06),
+        0px 8px 16px rgba(0, 0, 0, 0.1);
+    --elevation-4:
+        0px 6px 12px rgba(0, 0, 0, 0.07),
+        0px 12px 24px rgba(0, 0, 0, 0.12);
+    --elevation-5:
+        0px 8px 16px rgba(0, 0, 0, 0.08),
+        0px 16px 32px rgba(0, 0, 0, 0.14);
+
+    /* Animation Timing */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Luxury Background Animation */
+@keyframes luxuryGradient {
+    0% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: hue-rotate(10deg);
+    }
+    100% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+}
+
+/* Premium Glass Morphism Effect */
+@supports (backdrop-filter: blur(20px)) {
+    .active, .holding {
+        backdrop-filter: blur(20px) saturate(180%);
+    }
+}
+
+/* High-end Body Styling */
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        125deg,
+        var(--neutral-950),
+        var(--neutral-900) 15%,
+        var(--neutral-800) 35%,
+        var(--neutral-900) 50%,
+        var(--neutral-950) 65%,
+        var(--neutral-900) 85%,
+        var(--neutral-950)
+    );
+    background-size: 400% 400%;
+    animation: luxuryGradient 15s ease infinite;
+    color: var(--neutral-100);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Enterprise Container Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    gap: 3rem;
+    padding: 3rem;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+}
+
+/* Premium Section Styling */
+.active, .holding {
+    flex: 1;
+    padding: 2.5rem;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: var(--elevation-4);
+    transition: transform var(--transition-spring),
+    box-shadow var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Advanced Section Decorations */
+.active::before, .holding::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 32px;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent
+    );
+    mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Section-specific Styling */
+.active {
+    background: linear-gradient(
+        145deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(59, 130, 246, 0.05) 45%,
+        transparent
+    );
+}
+
+.holding {
+    background: linear-gradient(
+        145deg,
+        rgba(249, 115, 22, 0.1),
+        rgba(249, 115, 22, 0.05) 45%,
+        transparent
+    );
+}
+
+/* Ultra Premium Hover Effects */
+.active:hover, .holding:hover {
+    transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
+    box-shadow:
+        var(--elevation-5),
+        0 0 30px rgba(255, 255, 255, 0.1),
+        0 0 80px rgba(255, 255, 255, 0.05);
+}
+
+/* Luxury Headings */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--neutral-50);
+}
+
+/* Advanced Heading Decorations */
+h2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33%;
+    height: 2px;
+    transition: width var(--transition-base);
+}
+
+.active h2::after {
+    background: linear-gradient(
+        to right,
+        var(--active-400),
+        var(--active-500)
+    );
+}
+
+.holding h2::after {
+    background: linear-gradient(
+        to right,
+        var(--holding-400),
+        var(--holding-500)
+    );
+}
+
+/* Project Counter System */
+.active {
+    counter-reset: project-counter;
+    position: relative;
+}
+
+.active::after {
+    content: '(' attr(data-count) '/3 projects)';
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 0.875rem;
+    color: var(--neutral-400);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: all var(--transition-base);
+}
+
+/* Counter states */
+.active[data-count="3"]::after {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: var(--active-400);
+}
+
+/* Project Slots System */
+.active {
+    --slot-height: 4rem;
+    --total-slots: 3;
+}
+
+/* Empty Slot Styling */
+.active::before {
+    content: '';
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    height: calc(var(--slot-height) * (var(--total-slots) - var(--current-slots, 0)));
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(59, 130, 246, 0.03) 0px,
+        rgba(59, 130, 246, 0.03) var(--slot-height),
+        transparent var(--slot-height),
+        transparent calc(var(--slot-height) + 1rem)
+    );
+    border-radius: 16px;
+    border: 2px dashed rgba(59, 130, 246, 0.1);
+    opacity: 0.5;
+    pointer-events: none;
+    transition: all var(--transition-base);
+}
+
+/* Enhanced List Items */
+li {
+    list-style: none;
+    padding: 1.25rem 1.75rem;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: var(--neutral-200);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transform-origin: left center;
+}
+
+/* Improved Hover Effects */
+li {
+    --hover-translate: 8px;
+    --hover-scale: 1.02;
+    --hover-rotate: 0deg;
+}
+
+li:hover {
+    transform: translateX(var(--hover-translate));
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: var(--elevation-2);
+}
+
+/* Active Projects List Items */
+.active li {
+    counter-increment: project-counter;
+    background: linear-gradient(
+        to right,
+        rgba(59, 130, 246, 0.08),
+        rgba(59, 130, 246, 0.03)
+    );
+}
+
+.active li::before {
+    content: counter(project-counter);
+    position: absolute;
+    left: -2rem;
+    color: var(--active-400);
+    font-size: 0.875rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(1rem);
+    transition: all var(--transition-base);
+}
+
+/* Enhanced Active Project Hover */
+.active li:hover {
+    --hover-translate: 1rem;
+    background: linear-gradient(
+        to right,
+        rgba(59, 130, 246, 0.12),
+        rgba(59, 130, 246, 0.06)
+    );
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.active li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Holding Tank List Items */
+.holding li {
+    background: linear-gradient(
+        to right,
+        rgba(249, 115, 22, 0.08),
+        rgba(249, 115, 22, 0.03)
+    );
+}
+
+.holding li:hover {
+    --hover-translate: 1rem;
+    background: linear-gradient(
+        to right,
+        rgba(249, 115, 22, 0.12),
+        rgba(249, 115, 22, 0.06)
+    );
+    border-color: rgba(249, 115, 22, 0.2);
+}
+
+/* Smooth Interaction Helpers */
+.active li, .holding li {
+    will-change: transform, background, border-color;
+    transition:
+        transform var(--transition-base),
+        background-color var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+/* Project Limit Indicator */
+.active[data-count="3"] li:hover {
+    --hover-translate: 0.5rem;
+    --hover-scale: 1.01;
+}
+
+/* Visual feedback when trying to add more than 3 projects */
+@keyframes shakeLimit {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+.active[data-count="3"].limit-reached {
+    animation: shakeLimit 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Improved Focus States */
+li:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 2px var(--neutral-900),
+        0 0 0 4px var(--active-500),
+        var(--elevation-3);
+    --hover-translate: 0;
+    --hover-scale: 1;
+    --hover-rotate: 0deg;
+}
+
