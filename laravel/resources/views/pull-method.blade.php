@@ -4,16 +4,20 @@
 <div class="container">
     <div class="active" data-count="3">
         <h2>Active projects</h2>
-        <li>Pull Method project</li>
-        <li>Colemak leren</li>
-        <li>VIM leren</li>
+        <ul>
+            <li>Pull Method project</li>
+            <li>Colemak leren</li>
+            <li>VIM leren</li>
+        </ul>
     </div>
     <div class="holding">
         <h2>Holding tank</h2>
-        <li>Hour tracker koppelen met PM</li>
-        <li>VIM opzetten met colemak</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
+        <ul>
+            <li>Hour tracker koppelen met PM</li>
+            <li>VIM opzetten met colemak</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+        </ul>
     </div>
 </div>
