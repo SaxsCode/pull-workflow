@@ -13,11 +13,10 @@
     <div class="holding">
         <h2>Holding tank</h2>
         <ul>
-            <li>Hour tracker koppelen met PM</li>
-            <li>VIM opzetten met colemak</li>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
+           @foreach($projects as $project)
+               <li>{{ $project }}</li>
+
+           @endforeach
         </ul>
     </div>
 </div>

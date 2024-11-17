@@ -12,7 +12,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        //
+        $projects = Projects::all();
+        return view('pull-method', compact('projects'));
     }
 
     /**
